@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickman PCs - Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, green, lighttan); /* Gradient from green to light tan */
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px; /* Curved corners for the header */
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'Crimson Pro', serif;
+            font-size: 2em;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            padding: 20px;
+            margin: 20px;
+            background-color: #1c1c1c;
+            border-radius: 10px; /* Curved corners for the container */
+        }
+        .container h2 {
+            font-size: 1.8em;
+            color: yellow; /* Yellow subheader text */
+        }
+        p {
+            font-size: 1.1em;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stickman PCs</h1>
+        <div>
+            <a href="https://youtube.com/@stickmanpcs?si=wqvJYMo74HaaxM5f">YouTube</a> |
+            <a href="https://x.com/stickmanpcs?s=11">Twitter/X</a>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Blog</h2>
+        <p><strong>October 16, 2024</strong></p>
+        <p>This is where our blog post will go in the future.</p>
+    </div>
+</body>
+</html>
