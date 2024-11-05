@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickman PCs - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(to right, purple, yellow); /* Gradient from purple to yellow */
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px; /* Curved corners for the header */
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5em;
+        }
+        .container {
+            padding: 20px;
+            margin: 20px;
+            background-color: #1c1c1c;
+            border-radius: 10px; /* Curved corners for the container */
+            max-width: 800px;
+            width: 90%;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 15px;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #666;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        .links a:hover {
+            background-color: #444;
+        }
+        p {
+            font-size: 1.1em;
+            color: #ccc;
+            margin-top: 15px;
+            line-height: 1.6em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stickman PCs</h1>
+    </header>
+    <div class="container">
+        <h2>Welcome to Stickman PCs</h2>
+        <p>Stickman PCs is run by a small team with a big dream: to create affordable, high-quality custom PCs and provide reliable repair services. We specialize in crafting tailored PC builds, electronic repairs, and soon, custom keyboards! Our mission is to bring powerful, affordable technology to everyone.</p>
+        <p>Explore our services, check out our blog, or connect with us on social media to stay updated with our latest offerings.</p>
+        <div class="links">
+            <a href="custom_pc_builds.html">Custom PC Builds</a>
+            <a href="electronic_repair.html">Electronic Repair</a>
+            <a href="custom_keyboards.html">Custom Keyboards</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <div class="links">
+            <a href="https://youtube.com/@stickmanpcs?si=wqvJYMo74HaaxM5f">YouTube</a>
+            <a href="https://x.com/stickmanpcs?s=11">Twitter/X</a>
+        </div>
+    </div>
+</body>
+</html>
