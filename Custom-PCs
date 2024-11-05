@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickman PCs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, yellow, purple);
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'Crimson Pro', serif;
+            font-size: 2em;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 5px;
+        }
+        header a:hover {
+            border-bottom: 2px solid #fff;
+        }
+        .container {
+            padding: 20px;
+            margin: 20px;
+            background-color: #222;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .container h2 {
+            font-size: 1.8em;
+            color: yellow;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1em;
+            background-color: #333;
+            color: #fff;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: yellow;
+            outline: none;
+        }
+        button {
+            background-color: yellow;
+            border: none;
+            color: #000;
+            padding: 15px;
+            font-size: 1em;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #e0e000;
+        }
+        .footer-text {
+            margin-top: 20px;
+            color: #bbb;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stickman PCs</h1>
+        <div>
+            <a href="https://youtube.com/@stickmanpcs?si=wqvJYMo74HaaxM5f">YouTube</a> |
+            <a href="https://x.com/stickmanpcs?s=11">Twitter/X</a>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Build a Custom PC</h2>
+        <form method="POST" action="">
+            <label for="pcpartpicker-link">PC Part Picker Link:</label>
+            <input type="text" id="pcpartpicker-link" name="pcpartpicker-link">
+            <p>You may just insert a PC Part Picker link and we can view that, or you can paste all the items into our PC builder.</p>
+
+            <label for="ram">RAM:</label>
+            <input type="text" id="ram" name="ram">
+            <label for="ram-brand">RAM Brand:</label>
+            <input type="text" id="ram-brand" name="ram-brand">
+            <label for="storage">Storage:</label>
+            <input type="text" id="storage" name="storage">
+            <label for="storage-size">Storage Size:</label>
+            <input type="text" id="storage-size" name="storage-size">
+            <label for="storage-type">Storage Type:</label>
+            <select id="storage-type" name="storage-type" required>
+                <option value="sata">SATA</option>
+                <option value="nvme">NVMe</option>
+            </select>
+            <label for="num-drives">Number of Drives:</label>
+            <input type="number" id="num-drives" name="num-drives" min="1" max="6">
+            <label for="storage-brand">HDD/SSD Brand:</label>
+            <input type="text" id="storage-brand" name="storage-brand">
+            <label for="gpu">GPU:</label>
+            <input type="text" id="gpu" name="gpu">
+            <label for="cpu">CPU:</label>
+            <input type="text" id="cpu" name="cpu">
+            <label for="motherboard">Motherboard:</label>
+            <input type="text" id="motherboard" name="motherboard">
+            <label for="mouse">Mouse:</label>
+            <input type="text" id="mouse" name="mouse">
+            <label for="keyboard">Keyboard:</label>
+            <input type="text" id="keyboard" name="keyboard">
+            <label for="case">Case:</label>
+            <input type="text" id="case" name="case">
+            <label for="monitor">Monitor:</label>
+            <input type="text" id="monitor" name="monitor">
+            <label for="mousepad">Mouse Pad:</label>
+            <input type="text" id="mousepad" name="mousepad">
+            <label for="speakers">Speakers:</label>
+            <input type="text" id="speakers" name="speakers">
+            <label for="case-fans">Case Fans:</label>
+            <input type="text" id="case-fans" name="case-fans">
+            <label for="cooling">Cooling:</label>
+            <select id="cooling" name="cooling" required>
+                <option value="air">Air Cooling</option>
+                <option value="aio">AIO</option>
+                <option value="custom">Custom (Brand/Model)</option>
+            </select>
+            <label for="cooling-details">Cooling Brand/Model (if custom):</label>
+            <input type="text" id="cooling-details" name="cooling-details">
+
+            <label for="os">Operating System:</label>
+            <select id="os" name="os" required>
+                <option value="win11">Windows 11</option>
+                <option value="win10">Windows 10</option>
+                <option value="fedora">Fedora Linux</option>
+                <option value="ubuntu">Ubuntu Linux</option>
+                <option value="opensuse">OpenSUSE Linux</option>
+                <option value="arch">Arch Linux</option>
+                <option value="openbsd">OpenBSD</option>
+                <option value="netbsd">NetBSD</option>
+                <option value="freebsd">FreeBSD</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="location">Location:</label>
+            <select id="location" name="location" required>
+                <option value="us">United States (Free Shipping)</option>
+                <option value="international">International (Shipping fees vary)</option>
+            </select>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone">
+            <label for="notes">Additional Notes or Questions:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+
+            <button type="submit" onclick="window.location.href='mailto:bananapeppersz@example.com?subject=Custom%20PC%20Build&body=Please%20fill%20out%20this%20form%20with%20your%20details.'">Send</button>
+        </form>
+    </div>
+
+    <div class="footer-text">
+        Stickman PCs is run by three people who have a dream of creating their own PC company. This website is built by Bananapeppersz.
+    </div>
+</body>
+</html>
