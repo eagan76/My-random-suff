@@ -1,3 +1,3 @@
 This is the github page for the stickman-pcs website 
 
-Visit stickman-pcs.com for more info
+Visit https://www.stickman-pcs.com for more info
