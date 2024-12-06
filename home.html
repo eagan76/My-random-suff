@@ -1,84 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stickman PCs - Home</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-        }
-        header {
-            background: linear-gradient(to right, purple, yellow); /* Gradient from purple to yellow */
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px; /* Curved corners for the header */
-        }
-        header h1 {
-            margin: 0;
-            font-family: 'Crimson Pro', serif;
-            font-size: 2.5em;
-        }
-        .container {
-            padding: 20px;
-            margin: 20px;
-            background-color: #1c1c1c;
-            border-radius: 10px; /* Curved corners for the container */
-            max-width: 800px;
-            width: 90%;
-        }
-        .links {
-            margin-top: 20px;
-        }
-        .links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2em;
-            margin: 0 15px;
-            display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid #666;
-            border-radius: 10px;
-            transition: background-color 0.3s;
-        }
-        .links a:hover {
-            background-color: #444;
-        }
-        p {
-            font-size: 1.1em;
-            color: #ccc;
-            margin-top: 15px;
-            line-height: 1.6em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stickman PCs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Body Styling */
+    :root {
+      --primary-bg-color-light: #e0e0e0;
+      --primary-bg-color-dark: #333;
+      --text-color-light: #333;
+      --text-color-dark: #f0f0f0;
+      --banner-gradient-light: linear-gradient(45deg, #00bfae, #ffcc00); /* Light mode gradient */
+      --banner-gradient-dark: linear-gradient(45deg, #2b2b2b, #1a1a1a); /* Original dark mode gradient */
+      --link-bg-light: #d3d3d3;
+      --link-bg-dark: #555;
+      --link-hover-light: #bdbdbd;
+      --link-hover-dark: #444;
+      --button-bg-light: #444;
+      --button-bg-dark: #666;
+    }
+
+    body {
+      font-family: 'Crimson Pro', serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Light Mode */
+    body.light-mode {
+      background-color: var(--primary-bg-color-light);
+      color: var(--text-color-light);
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: var(--primary-bg-color-dark);
+      color: var(--text-color-dark);
+    }
+
+    /* Banner Section Styling */
+    .banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      background: var(--banner-gradient-light); /* Default to light mode gradient */
+      transition: background 0.3s ease;
+      position: relative;
+    }
+
+    body.dark-mode .banner {
+      background: var(--banner-gradient-dark); /* Original dark mode gradient */
+    }
+
+    /* Links Section Styling */
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .links a {
+      text-decoration: none;
+      background: var(--link-bg-light);
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #333;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .links a:hover {
+      background: var(--link-hover-light);
+    }
+
+    /* Dark Mode Links */
+    body.dark-mode .links a {
+      background: var(--link-bg-dark);
+      color: white;
+    }
+
+    body.dark-mode .links a:hover {
+      background: var(--link-hover-dark);
+    }
+
+    /* About Section Styling */
+    .about-section {
+      background: #ffffff;
+      margin: 50px auto;
+      padding: 30px;
+      width: 80%;
+      max-width: 900px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Dark Mode About Section */
+    body.dark-mode .about-section {
+      background: #444;
+    }
+
+    .about-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    body.dark-mode .about-section p {
+      color: #ddd;
+    }
+
+    /* Welcome Section Styling */
+    .welcome-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+    }
+
+    .pill {
+      background: var(--banner-gradient-light); /* Default to light mode gradient */
+      padding: 40px 20px;
+      border-radius: 50px;
+      text-align: center;
+      color: #222;
+      font-size: 1.5rem;
+      font-weight: 600;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode .pill {
+      background: var(--banner-gradient-dark);
+      color: #ffffff; /* White text in dark mode */
+    }
+
+    /* Button to toggle modes */
+    .mode-toggle-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      background: var(--button-bg-light);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .mode-toggle-btn:hover {
+      background-color: var(--button-bg-dark);
+    }
+
+    /* Stickman Text */
+    .stickman-text {
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 10px;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+      display: inline-block;
+    }
+
+    .stickman-text span {
+      display: inline-block;
+      opacity: 0;
+      animation: letterFadeIn 1.5s forwards;
+      animation-delay: 0.1s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes letterFadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Stickman PCs</h1>
-    </header>
-    <div class="container">
-        <h2>Welcome to Stickman PCs</h2>
-        <p>Stickman PCs is run by a small team with a big dream: to create affordable, high-quality custom PCs and provide reliable repair services. We specialize in crafting tailored PC builds, electronic repairs, and soon, custom keyboards! Our mission is to bring powerful, affordable technology to everyone.</p>
-        <p>Explore our services, check out our blog, or connect with us on social media to stay updated with our latest offerings.</p>
-        <div class="links">
-            <a href="custom_pc_builds.html">Custom PC Builds</a>
-            <a href="electronic_repair.html">Electronic Repair</a>
-            <a href="custom_keyboards.html">Custom Keyboards</a>
-            <a href="blog.html">Blog</a>
-        </div>
-        <div class="links">
-            <a href="https://youtube.com/@stickmanpcs?si=wqvJYMo74HaaxM5f">YouTube</a>
-            <a href="https://x.com/stickmanpcs?s=11">Twitter/X</a>
-        </div>
+<body class="light-mode">
+  <!-- Banner Section -->
+  <div class="banner">
+    <button class="mode-toggle-btn" onclick="toggleMode()">🌙</button>
+    <div class="stickman-text">
+      <span>S</span><span>t</span><span>i</span><span>c</span><span>k</span><span>m</span><span>a</span><span>n</span>
     </div>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="links">
+    <a href="https://www.stickman-pcs.com/blog">Blog</a>
+    <a href="https://www.stickman-pcs.com/custom-pcs">Custom PC Builds</a>
+    <a href="https://www.stickman-pcs.com/repair">Electronic Repair</a>
+    <a href="https://www.stickman-pcs.com/custom-keyboards">Custom Keyboards</a>
+  </div>
+
+  <!-- About Section -->
+  <div class="about-section">
+    <h2>Welcome to Stickman PCs</h2>
+    <p>
+      Stickman PCs is run by a small team with a big dream: to create affordable, high-quality custom PCs and provide reliable repair services. We specialize in crafting tailored PC builds, electronic repairs, and soon, custom keyboards. Our mission is to bring powerful, affordable technology to everyone.
+    </p>
+  </div>
+
+  <!-- Welcome Section -->
+  <div class="welcome-section">
+    <div class="pill">
+      Welcome to Stickman PCs!
+    </div>
+  </div>
+
+  <script>
+    // Function to toggle between dark and light mode
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle('light-mode');
+
+      // Update the button icon based on current mode
+      const modeButton = document.querySelector('.mode-toggle-btn');
+      if (document.body.classList.contains('dark-mode')) {
+        modeButton.textContent = '☀️';
+      } else {
+        modeButton.textContent = '🌙';
+      }
+    }
+
+    // Apply letter-by-letter animation for the Stickman text
+    document.addEventListener("DOMContentLoaded", function() {
+      const stickmanText = document.querySelectorAll('.stickman-text span');
+      stickmanText.forEach((letter, index) => {
+        letter.style.animationDelay = `${index * 0.1}s`; // Delay for each letter
+      });
+    });
+  </script>
 </body>
 </html>
