@@ -1,3 +1,3 @@
-This is the official github repo for the stickman-pcs website 
+Welcome you can click tha link below to continue to my website.
 
-Visit https://www.stickman-pcs.com/about-us for more info
+https://eagan76.github.io/My-random-suff/home.html
